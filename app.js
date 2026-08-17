@@ -53,6 +53,8 @@ const detailStops = document.getElementById('detailStops');
 // Show loading state in stats
 statsEl.innerHTML = '<div style="grid-column:1/-1;text-align:center;color:var(--ink-secondary);padding:10px;">Loading Transit Network...</div>';
 
+let stopRoutesIndex = {};
+
 async function loadData() {
   const [indexRes, stopsRes, govRes, privRes, miniRes, metroRes] = await Promise.all([
     fetch('data/routes_index.json'),
@@ -71,10 +73,34 @@ async function loadData() {
   routesGeoByKind.mini       = await miniRes.json();
   routesGeoByKind.metro      = await metroRes.json();
 
+  buildStopRoutesIndex();
   renderStats();
   renderList(filterRoutes());
   buildAllRoutesLayer();
   buildStopsLayer();
+}
+
+function buildStopRoutesIndex() {
+  stopRoutesIndex = {};
+  for (const feature of allFeatures()) {
+    const p = feature.properties;
+    for (const stop of (p.stops || [])) {
+      if (!stop.name) continue;
+      const key = stop.name.trim().toLowerCase();
+      if (!stopRoutesIndex[key]) {
+        stopRoutesIndex[key] = [];
+      }
+      if (!stopRoutesIndex[key].some(r => r.id === p.id)) {
+        stopRoutesIndex[key].push({
+          id: p.id,
+          code: p.code,
+          kind: p.kind,
+          origin: p.origin,
+          destination: p.destination
+        });
+      }
+    }
+  }
 }
 
 function renderStats() {
@@ -194,23 +220,20 @@ function selectRoute(id) {
     ${props.stop_count} stops (${props.geocoded_stops} mapped on map)
   `;
 
-  detailStops.innerHTML = props.stops.map(s =>
-    `<li data-lat="${s.lat}" data-lng="${s.lng}">
-      <strong>${esc(s.sequence)}.</strong> ${esc(s.name)}
-    </li>`
-  ).join('');
+  // Render stops in timeline panel with transfer badges
+  detailStops.innerHTML = props.stops.map(s => {
+    const key = (s.name || '').trim().toLowerCase();
+    const connCount = (stopRoutesIndex[key] || []).length;
+    const transferBadge = connCount > 1 ? `<span class="transfer-badge-count" title="${connCount} connecting lines">${connCount} lines</span>` : '';
+    return `
+      <li data-seq="${s.sequence}" data-lat="${s.lat}" data-lng="${s.lng}">
+        <span><strong>${esc(s.sequence)}.</strong> ${esc(s.name)}</span>
+        ${transferBadge}
+      </li>
+    `;
+  }).join('');
 
-  // Add click handler to fly to individual stop
-  detailStops.querySelectorAll('li').forEach(li => {
-    li.addEventListener('click', () => {
-      const lat = parseFloat(li.dataset.lat);
-      const lng = parseFloat(li.dataset.lng);
-      if (!isNaN(lat) && !isNaN(lng)) {
-        map.flyTo([lat, lng], 15, { duration: 1.2 });
-      }
-    });
-  });
-
+  // Keep route polyline illumination intact
   selectedLayer = L.geoJSON(feature, {
     style: {
       color: colorFor(props.kind),
@@ -219,23 +242,126 @@ function selectRoute(id) {
     },
   }).addTo(map);
 
+  const stopMarkersMap = {};
+  const totalStops = props.stops.length;
+
   if (showStopsEl.checked) {
     for (const s of props.stops) {
+      if (s.lat == null || s.lng == null) continue;
+      
+      const isOrigin = (s.sequence === 1);
+      const isDest = (s.sequence === totalStops);
+      
+      const radius = isOrigin || isDest ? 8 : 5;
+      const strokeColor = isOrigin ? '#10b981' : (isDest ? '#ef4444' : '#ffffff');
+      const fillColor = isOrigin ? '#10b981' : (isDest ? '#ef4444' : colorFor(props.kind));
+
       const m = L.circleMarker([s.lat, s.lng], {
-        radius: 6,
-        color: '#ffffff',
-        weight: 2,
-        fillColor: colorFor(props.kind),
+        radius: radius,
+        color: strokeColor,
+        weight: isOrigin || isDest ? 3 : 2,
+        fillColor: fillColor,
         fillOpacity: 1,
-      }).bindPopup(`
-        <div style="font-family:var(--font-body);padding:2px;">
-          <strong style="font-size:0.95rem;color:#fff;">${esc(s.name)}</strong><br>
-          <span style="font-size:0.78rem;color:var(--ink-secondary);">Stop ${s.sequence} &middot; Route ${esc(props.code)}</span>
+      });
+
+      // Hover tooltip for sequence & stop name
+      m.bindTooltip(
+        `<strong>Stop ${s.sequence}/${totalStops}</strong>: ${esc(s.name)}`,
+        { direction: 'top', offset: [0, -6], opacity: 0.9 }
+      );
+
+      // Interactive popup with connecting route transfer chips
+      const key = (s.name || '').trim().toLowerCase();
+      const connections = (stopRoutesIndex[key] || []).filter(r => r.id !== props.id);
+      
+      let transferHtml = '';
+      if (connections.length > 0) {
+        const chips = connections.slice(0, 10).map(c => `
+          <span class="transfer-chip ${c.kind}" data-route-id="${esc(c.id)}" title="${esc(c.code)}: ${esc(c.origin)} → ${esc(c.destination)}">
+            <i class="fa-solid ${c.kind === 'metro' ? 'fa-train-subway' : 'fa-bus'}"></i> ${esc(c.code)}
+          </span>
+        `).join('');
+        const moreCount = connections.length > 10 ? ` <span style="font-size:0.7rem;color:var(--ink-secondary);">+${connections.length - 10} more</span>` : '';
+        transferHtml = `
+          <div class="transfer-header">
+            <span><i class="fa-solid fa-code-branch" style="color:var(--accent-gold);"></i> Connecting Lines (${connections.length})</span>
+          </div>
+          <div class="transfer-chips">${chips}${moreCount}</div>
+        `;
+      } else {
+        transferHtml = `<div style="font-size:0.75rem;color:var(--ink-secondary);margin-top:6px;">No other direct transfers at this stop</div>`;
+      }
+
+      const popupContent = document.createElement('div');
+      popupContent.className = 'stop-popup';
+      popupContent.innerHTML = `
+        <div class="stop-popup-header">
+          <span class="stop-seq-badge">Stop ${s.sequence} of ${totalStops}</span>
         </div>
-      `);
+        <div class="stop-popup-name">${esc(s.name)}</div>
+        <div class="stop-popup-sub">
+          <i class="fa-solid fa-route" style="color:var(--accent-gold);"></i> Route ${esc(props.code)}
+        </div>
+        ${transferHtml}
+        <button class="btn-search-stop" data-stop-name="${esc(s.name)}">
+          <i class="fa-solid fa-magnifying-glass"></i> Filter routes at this stop
+        </button>
+      `;
+
+      popupContent.querySelectorAll('.transfer-chip').forEach(chip => {
+        chip.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const routeId = chip.dataset.routeId;
+          if (routeId) selectRoute(routeId);
+        });
+      });
+
+      popupContent.querySelector('.btn-search-stop').addEventListener('click', (e) => {
+        e.stopPropagation();
+        searchEl.value = s.name;
+        clearSearchBtn.classList.remove('hidden');
+        renderList(filterRoutes());
+        map.closePopup();
+      });
+
+      m.bindPopup(popupContent);
       selectedLayer.addLayer(m);
+      stopMarkersMap[s.sequence] = m;
     }
   }
+
+  // Side panel timeline hover & click interactions
+  detailStops.querySelectorAll('li').forEach(li => {
+    const seq = parseInt(li.dataset.seq);
+    const lat = parseFloat(li.dataset.lat);
+    const lng = parseFloat(li.dataset.lng);
+
+    li.addEventListener('mouseenter', () => {
+      li.classList.add('active-stop');
+      const m = stopMarkersMap[seq];
+      if (m) {
+        m.setStyle({ radius: 9, weight: 4 });
+      }
+    });
+
+    li.addEventListener('mouseleave', () => {
+      li.classList.remove('active-stop');
+      const m = stopMarkersMap[seq];
+      if (m) {
+        const isOrigin = (seq === 1);
+        const isDest = (seq === totalStops);
+        m.setStyle({ radius: isOrigin || isDest ? 8 : 5, weight: isOrigin || isDest ? 3 : 2 });
+      }
+    });
+
+    li.addEventListener('click', () => {
+      if (!isNaN(lat) && !isNaN(lng)) {
+        map.flyTo([lat, lng], 16, { duration: 1.0 });
+        const m = stopMarkersMap[seq];
+        if (m) m.openPopup();
+      }
+    });
+  });
 
   map.fitBounds(selectedLayer.getBounds(), { padding: [50, 50] });
 }
@@ -269,13 +395,56 @@ function buildStopsLayer() {
   if (stopsLayer) map.removeLayer(stopsLayer);
   const stops = window.stopsGeocoded || {};
   const group = L.layerGroup();
+
   for (const [name, info] of Object.entries(stops)) {
-    L.circleMarker([info.lat, info.lng], {
+    const key = name.trim().toLowerCase();
+    const connections = stopRoutesIndex[key] || [];
+
+    const m = L.circleMarker([info.lat, info.lng], {
       radius: 3,
       color: 'transparent',
       fillColor: '#f59e0b',
-      fillOpacity: 0.5,
-    }).bindPopup(`<strong style="color:#fff;">${esc(name)}</strong>`).addTo(group);
+      fillOpacity: 0.6,
+    });
+
+    m.bindTooltip(`<strong>${esc(name)}</strong> (${connections.length} routes)`, { direction: 'top', opacity: 0.9 });
+
+    const popupDiv = document.createElement('div');
+    popupDiv.className = 'stop-popup';
+    popupDiv.innerHTML = `
+      <div class="stop-popup-name">${esc(name)}</div>
+      <div class="stop-popup-sub">
+        <i class="fa-solid fa-location-dot" style="color:var(--accent-gold);"></i> ${connections.length} Connecting Lines
+      </div>
+      <div class="transfer-chips">
+        ${connections.slice(0, 12).map(c => `
+          <span class="transfer-chip ${c.kind}" data-route-id="${esc(c.id)}">
+            <i class="fa-solid ${c.kind === 'metro' ? 'fa-train-subway' : 'fa-bus'}"></i> ${esc(c.code)}
+          </span>
+        `).join('')}
+        ${connections.length > 12 ? `<span style="font-size:0.7rem;color:var(--ink-secondary);">+${connections.length - 12} more</span>` : ''}
+      </div>
+      <button class="btn-search-stop" style="margin-top:8px;">Filter routes at this stop</button>
+    `;
+
+    popupDiv.querySelectorAll('.transfer-chip').forEach(chip => {
+      chip.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const routeId = chip.dataset.routeId;
+        if (routeId) selectRoute(routeId);
+      });
+    });
+
+    popupDiv.querySelector('.btn-search-stop').addEventListener('click', (e) => {
+      e.stopPropagation();
+      searchEl.value = name;
+      clearSearchBtn.classList.remove('hidden');
+      renderList(filterRoutes());
+      map.closePopup();
+    });
+
+    m.bindPopup(popupDiv);
+    group.addLayer(m);
   }
   stopsLayer = group;
 }
