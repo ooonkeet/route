@@ -2766,16 +2766,16 @@
     "matched": "Alambazar"
   },
   "Bibibazar": {
-    "lat": 22.610333333333333,
-    "lng": 88.36699999999999,
-    "source": "interpolated",
-    "matched": "Bibibazar"
+    "lat": 22.61,
+    "lng": 88.3695,
+    "source": "osm_verified_land",
+    "matched": "Bibibazar (Land Verified)"
   },
   "Chitpur Bridge": {
-    "lat": 22.605666666666664,
-    "lng": 88.366,
-    "source": "interpolated",
-    "matched": "Chitpur Bridge"
+    "lat": 22.6055,
+    "lng": 88.3688,
+    "source": "osm_verified_land",
+    "matched": "Chitpur Bridge (Land Verified)"
   },
   "Dhalai Bridge": {
     "lat": 22.466,
@@ -4194,10 +4194,10 @@
     "matched": "Bakhrahat"
   },
   "Bibirhat": {
-    "lat": 22.57290359285714,
-    "lng": 88.31565888571429,
-    "source": "interpolated",
-    "matched": "Bibirhat"
+    "lat": 22.458,
+    "lng": 88.192,
+    "source": "osm_verified_land",
+    "matched": "Bibirhat (Land Verified)"
   },
   "Shamukpota": {
     "lat": 22.527955428571428,
@@ -5406,10 +5406,10 @@
     "matched": "Lake Mall"
   },
   "Chitpur": {
-    "lat": 22.7286012,
-    "lng": 88.36478166666666,
-    "source": "interpolated",
-    "matched": "Chitpur"
+    "lat": 22.6015,
+    "lng": 88.371,
+    "source": "osm_verified_land",
+    "matched": "Chitpur (Land Verified)"
   },
   "Satyanarayan Park": {
     "lat": 22.6523006,
