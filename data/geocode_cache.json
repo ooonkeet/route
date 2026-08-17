@@ -3426,10 +3426,10 @@
     "matched": "Gopalpur House (VIP Road / Rajarhat)"
   },
   "Kalipark": {
-    "lat": 22.604824485714285,
-    "lng": 88.43061484285714,
-    "source": "interpolated",
-    "matched": "Kalipark"
+    "lat": 22.6218,
+    "lng": 88.4515,
+    "source": "osm_verified_corridor",
+    "matched": "Kalipark (Rajarhat Main Road)"
   },
   "Bablatala": {
     "lat": 22.6225,
