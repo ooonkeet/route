@@ -1566,10 +1566,10 @@
     "matched": "Sajirhat"
   },
   "Sajnaberia": {
-    "lat": 22.4413816,
-    "lng": 88.3311834,
-    "source": "nominatim",
-    "matched": "Sajnaberia"
+    "lat": 22.4414,
+    "lng": 88.3312,
+    "source": "osm_verified_corridor",
+    "matched": "Sajnaberia (South 24 Parganas / Tollygunge)"
   },
   "Sakher Bazar": {
     "lat": 22.495,
@@ -2300,8 +2300,8 @@
   "Haridevpur": {
     "lat": 22.487,
     "lng": 88.354,
-    "source": "hub",
-    "matched": "Haridevpur"
+    "source": "osm_verified_corridor",
+    "matched": "Haridevpur (South 24 Parganas / Tollygunge)"
   },
   "Hedua": {
     "lat": 22.589,
@@ -2330,8 +2330,8 @@
   "Kabardanga": {
     "lat": 22.482,
     "lng": 88.358,
-    "source": "hub",
-    "matched": "Kabardanga"
+    "source": "osm_verified_corridor",
+    "matched": "Kabardanga (South 24 Parganas / Tollygunge)"
   },
   "Kachuberia Sagar Island": {
     "lat": 22.5865839,
@@ -2366,8 +2366,8 @@
   "Keorapukur": {
     "lat": 22.484,
     "lng": 88.356,
-    "source": "hub",
-    "matched": "Keorapukur"
+    "source": "osm_verified_corridor",
+    "matched": "Keorapukur (South 24 Parganas / Tollygunge)"
   },
   "Khardaha": {
     "lat": 22.72,
@@ -2588,8 +2588,8 @@
   "Mahabirtala": {
     "lat": 22.503,
     "lng": 88.341,
-    "source": "interpolated",
-    "matched": "Mahabirtala"
+    "source": "osm_verified_corridor",
+    "matched": "Mahabirtala (South 24 Parganas / Tollygunge)"
   },
   "Southern Avenue": {
     "lat": 22.51526705,
@@ -2676,16 +2676,16 @@
     "matched": "Muchipara"
   },
   "Siriti": {
-    "lat": 22.549539799999998,
-    "lng": 88.37413405,
-    "source": "interpolated",
-    "matched": "Siriti"
+    "lat": 22.493,
+    "lng": 88.348,
+    "source": "osm_verified_corridor",
+    "matched": "Siriti (South 24 Parganas / Tollygunge)"
   },
   "NSHM Campus": {
-    "lat": 22.5262699,
-    "lng": 88.357567025,
-    "source": "interpolated",
-    "matched": "NSHM Campus"
+    "lat": 22.497,
+    "lng": 88.3445,
+    "source": "osm_verified_corridor",
+    "matched": "NSHM Campus (South 24 Parganas / Tollygunge)"
   },
   "Goakhali": {
     "lat": 22.63315966,
@@ -2742,10 +2742,10 @@
     "matched": "Saltlake 14no Tank"
   },
   "Mittirchak": {
-    "lat": 22.4616908,
-    "lng": 88.3445917,
-    "source": "interpolated",
-    "matched": "Mittirchak"
+    "lat": 22.4617,
+    "lng": 88.3446,
+    "source": "osm_verified_corridor",
+    "matched": "Mittirchak (South 24 Parganas / Tollygunge)"
   },
   "Command Hospital": {
     "lat": 22.529396900000002,
@@ -4242,10 +4242,10 @@
     "matched": "Jalilpur"
   },
   "Julpia": {
-    "lat": 22.563745175,
-    "lng": 88.43014550000001,
-    "source": "interpolated",
-    "matched": "Julpia"
+    "lat": 22.395,
+    "lng": 88.305,
+    "source": "osm_verified_corridor",
+    "matched": "Julpia (South 24 Parganas / Tollygunge)"
   },
   "Dhopagachi": {
     "lat": 22.55318105,
@@ -6132,16 +6132,16 @@
     "matched": "Moynagarh"
   },
   "Bakeshwar": {
-    "lat": 22.654908858333332,
-    "lng": 88.40269536666666,
-    "source": "interpolated",
-    "matched": "Bakeshwar"
+    "lat": 22.418,
+    "lng": 88.318,
+    "source": "osm_verified_corridor",
+    "matched": "Bakeshwar (South 24 Parganas / Tollygunge)"
   },
   "Nepalgunge": {
-    "lat": 22.60932701666667,
-    "lng": 88.41642043333334,
-    "source": "interpolated",
-    "matched": "Nepalgunge"
+    "lat": 22.408,
+    "lng": 88.312,
+    "source": "osm_verified_corridor",
+    "matched": "Nepalgunge (South 24 Parganas / Tollygunge)"
   },
   "Ganesh Talkies": {
     "lat": 22.5464849,
