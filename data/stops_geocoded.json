@@ -258,10 +258,10 @@
     "matched": "Baghajatin"
   },
   "Baguiati": {
-    "lat": 22.613,
-    "lng": 88.431,
+    "lat": 22.6155,
+    "lng": 88.4335,
     "source": "osm_verified_corridor",
-    "matched": "Baguiati (Polerhat - Rajarhat)"
+    "matched": "Baguiati (VIP Road / Rajarhat)"
   },
   "Baikunthapur": {
     "lat": 22.4326597,
@@ -762,10 +762,10 @@
     "matched": "China Mandir"
   },
   "Chinar Park": {
-    "lat": 22.623,
-    "lng": 88.448,
+    "lat": 22.6236,
+    "lng": 88.441,
     "source": "osm_verified_corridor",
-    "matched": "Chinar Park (Polerhat - Rajarhat)"
+    "matched": "Chinar Park (VIP Road / Rajarhat)"
   },
   "Chingrighata": {
     "lat": 22.578,
@@ -966,10 +966,10 @@
     "matched": "Haldia"
   },
   "Haldirams": {
-    "lat": 22.601,
-    "lng": 88.428,
-    "source": "hub",
-    "matched": "Haldirams"
+    "lat": 22.6105,
+    "lng": 88.43,
+    "source": "osm_verified_corridor",
+    "matched": "Haldirams (VIP Road / Rajarhat)"
   },
   "Haltu Bazar": {
     "lat": 22.510785,
@@ -1080,10 +1080,10 @@
     "matched": "Ajoynagar"
   },
   "Kaikhali": {
-    "lat": 22.632,
-    "lng": 88.437,
-    "source": "hub",
-    "matched": "Kaikhali"
+    "lat": 22.6265,
+    "lng": 88.4375,
+    "source": "osm_verified_corridor",
+    "matched": "Kaikhali (VIP Road / Rajarhat)"
   },
   "Kalighat": {
     "lat": 22.518,
@@ -1170,10 +1170,10 @@
     "matched": "Kazipara"
   },
   "Kestopur": {
-    "lat": 22.601,
-    "lng": 88.428,
+    "lat": 22.5985,
+    "lng": 88.4215,
     "source": "osm_verified_corridor",
-    "matched": "Kestopur (Polerhat - Rajarhat)"
+    "matched": "Kestopur (VIP Road / Rajarhat)"
   },
   "Khanna Cinema": {
     "lat": 22.595,
@@ -1938,10 +1938,10 @@
     "matched": "Tegharia"
   },
   "Teghoria": {
-    "lat": 22.619,
-    "lng": 88.433,
-    "source": "hub",
-    "matched": "Teghoria"
+    "lat": 22.6105,
+    "lng": 88.43,
+    "source": "osm_verified_corridor",
+    "matched": "Teghoria (VIP Road / Rajarhat)"
   },
   "Tehatta": {
     "lat": 22.5268148,
@@ -3414,10 +3414,10 @@
     "matched": "Lakshminarayanpur"
   },
   "Gopalpur House": {
-    "lat": 22.600452042857142,
-    "lng": 88.41894147142857,
-    "source": "interpolated",
-    "matched": "Gopalpur House"
+    "lat": 22.624,
+    "lng": 88.462,
+    "source": "osm_verified_corridor",
+    "matched": "Gopalpur House (VIP Road / Rajarhat)"
   },
   "Kalipark": {
     "lat": 22.604824485714285,
@@ -3426,10 +3426,10 @@
     "matched": "Kalipark"
   },
   "Bablatala": {
-    "lat": 22.60919692857143,
-    "lng": 88.44228821428571,
-    "source": "interpolated",
-    "matched": "Bablatala"
+    "lat": 22.6225,
+    "lng": 88.455,
+    "source": "osm_verified_corridor",
+    "matched": "Bablatala (VIP Road / Rajarhat)"
   },
   "Narayanpur": {
     "lat": 22.61356937142857,
@@ -9168,10 +9168,10 @@
     "matched": "Jagadishpur Hospital"
   },
   "Dashadrone": {
-    "lat": 22.616226021428574,
-    "lng": 88.42797073571428,
-    "source": "interpolated",
-    "matched": "Dashadrone"
+    "lat": 22.621,
+    "lng": 88.448,
+    "source": "osm_verified_corridor",
+    "matched": "Dashadrone (VIP Road / Rajarhat)"
   },
   "Dhibdhiba": {
     "lat": 22.595,
@@ -10711,15 +10711,15 @@
   },
   "Salua Bazar": {
     "lat": 22.6232,
-    "lng": 88.4531,
+    "lng": 88.469,
     "source": "osm_verified_corridor",
-    "matched": "Salua Bazar (Polerhat - Rajarhat)"
+    "matched": "Salua Bazar (VIP Road / Rajarhat)"
   },
   "Derozio College": {
     "lat": 22.6227,
-    "lng": 88.4652,
+    "lng": 88.475,
     "source": "osm_verified_corridor",
-    "matched": "Derozio College (Polerhat - Rajarhat)"
+    "matched": "Derozio College (VIP Road / Rajarhat)"
   },
   "Ghola Bazar": {
     "lat": 22.734356483333332,
