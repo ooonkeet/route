@@ -1722,10 +1722,10 @@
     "matched": "Shyambazar (Polerhat - Rajarhat)"
   },
   "Shyamnagar": {
-    "lat": 22.8285164,
-    "lng": 88.3801893,
-    "source": "nominatim",
-    "matched": "Shyamnagar"
+    "lat": 22.583,
+    "lng": 88.675,
+    "source": "osm_verified_corridor",
+    "matched": "Shyamnagar (Rajarhat - Haroa Corridor)"
   },
   "Sian Hospital": {
     "lat": 22.5856734,
@@ -3453,7 +3453,7 @@
     "lat": 22.612,
     "lng": 88.515,
     "source": "osm_verified_corridor",
-    "matched": "Lauhati (Polerhat - Rajarhat)"
+    "matched": "Lauhati (Rajarhat - Haroa Corridor)"
   },
   "Shikharpur": {
     "lat": 22.598,
@@ -3468,10 +3468,10 @@
     "matched": "Bazetaraf (Polerhat - Rajarhat)"
   },
   "Chandpur": {
-    "lat": 22.547233149999997,
-    "lng": 88.4036888,
-    "source": "interpolated",
-    "matched": "Chandpur"
+    "lat": 22.608,
+    "lng": 88.545,
+    "source": "osm_verified_corridor",
+    "matched": "Chandpur (Rajarhat - Haroa Corridor)"
   },
   "Kemia": {
     "lat": 22.515405475,
@@ -5940,28 +5940,28 @@
     "matched": "Bataitala Bridge"
   },
   "Mazompur": {
-    "lat": 22.74480728,
-    "lng": 88.38549986,
-    "source": "interpolated",
-    "matched": "Mazompur"
+    "lat": 22.591,
+    "lng": 88.595,
+    "source": "osm_verified_corridor",
+    "matched": "Mazompur (Rajarhat - Haroa Corridor)"
   },
   "Dhanpota": {
-    "lat": 22.765734560000002,
-    "lng": 88.38417222,
-    "source": "interpolated",
-    "matched": "Dhanpota"
+    "lat": 22.589,
+    "lng": 88.615,
+    "source": "osm_verified_corridor",
+    "matched": "Dhanpota (Rajarhat - Haroa Corridor)"
   },
   "Payragacha": {
-    "lat": 22.78666184,
-    "lng": 88.38284458,
-    "source": "interpolated",
-    "matched": "Payragacha"
+    "lat": 22.587,
+    "lng": 88.635,
+    "source": "osm_verified_corridor",
+    "matched": "Payragacha (Rajarhat - Haroa Corridor)"
   },
   "Pirnagar": {
-    "lat": 22.807589120000003,
-    "lng": 88.38151694,
-    "source": "interpolated",
-    "matched": "Pirnagar"
+    "lat": 22.585,
+    "lng": 88.655,
+    "source": "osm_verified_corridor",
+    "matched": "Pirnagar (Rajarhat - Haroa Corridor)"
   },
   "Jagulgachi": {
     "lat": 22.491474843749998,
@@ -9174,10 +9174,10 @@
     "matched": "Dashadrone"
   },
   "Dhibdhiba": {
-    "lat": 22.687874774999997,
-    "lng": 88.39193904999999,
-    "source": "interpolated",
-    "matched": "Dhibdhiba"
+    "lat": 22.595,
+    "lng": 88.575,
+    "source": "osm_verified_corridor",
+    "matched": "Dhibdhiba (Rajarhat - Haroa Corridor)"
   },
   "Motigunge": {
     "lat": 22.68145355,
@@ -10449,7 +10449,7 @@
     "lat": 22.6267,
     "lng": 88.489,
     "source": "osm_verified_corridor",
-    "matched": "Rajarhat Chowmatha (Polerhat - Rajarhat)"
+    "matched": "Rajarhat Chowmatha (Rajarhat - Haroa Corridor)"
   },
   "Swasthya Bhawan": {
     "lat": 22.5706,
@@ -11824,5 +11824,17 @@
     "lng": 88.308,
     "source": "hub",
     "matched": "Kamardanga"
+  },
+  "Haroa Bridge": {
+    "lat": 22.582,
+    "lng": 88.685,
+    "source": "osm_verified_corridor",
+    "matched": "Haroa Bridge (Rajarhat - Haroa Corridor)"
+  },
+  "Haroa Bazar": {
+    "lat": 22.581,
+    "lng": 88.69,
+    "source": "osm_verified_corridor",
+    "matched": "Haroa Bazar (Rajarhat - Haroa Corridor)"
   }
 }
