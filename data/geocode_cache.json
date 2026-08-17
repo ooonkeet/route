@@ -440,14 +440,14 @@
   "Barrackpore Court": {
     "lat": 22.764,
     "lng": 88.372,
-    "source": "hub",
-    "matched": "Barrackpore Court"
+    "source": "osm_verified_corridor",
+    "matched": "Barrackpore Court (Barasat - Barrackpore Rd)"
   },
   "Barrackpore Station": {
     "lat": 22.758,
     "lng": 88.368,
-    "source": "hub",
-    "matched": "Barrackpore Station"
+    "source": "osm_verified_corridor",
+    "matched": "Barrackpore Station (Barasat - Barrackpore Rd)"
   },
   "Baruipur": {
     "lat": 22.3607154,
@@ -1824,10 +1824,10 @@
     "matched": "State Garage"
   },
   "Subhash Colony": {
-    "lat": 22.4704666,
-    "lng": 88.3695264,
-    "source": "nominatim",
-    "matched": "Subhash Colony"
+    "lat": 22.757,
+    "lng": 88.371,
+    "source": "osm_verified_corridor",
+    "matched": "Subhash Colony (Barasat - Barrackpore Rd)"
   },
   "Sukanta Park": {
     "lat": 22.6968847,
@@ -2112,10 +2112,10 @@
     "matched": "Wipro"
   },
   "Wireless": {
-    "lat": 22.4819811,
-    "lng": 88.347259,
-    "source": "nominatim",
-    "matched": "Wireless"
+    "lat": 22.7555,
+    "lng": 88.376,
+    "source": "osm_verified_corridor",
+    "matched": "Wireless (Barasat - Barrackpore Rd)"
   },
   "4 No Bridge": {
     "lat": 22.549,
@@ -3198,58 +3198,58 @@
     "matched": "Nibra"
   },
   "Barbaria": {
-    "lat": 22.696588799999997,
-    "lng": 88.47302716,
-    "source": "interpolated",
-    "matched": "Barbaria"
+    "lat": 22.73,
+    "lng": 88.46,
+    "source": "osm_verified_corridor",
+    "matched": "Barbaria (Barasat - Barrackpore Rd)"
   },
   "Jagannathpur": {
-    "lat": 22.6727435,
-    "lng": 88.45905291999999,
-    "source": "interpolated",
-    "matched": "Jagannathpur"
+    "lat": 22.734,
+    "lng": 88.448,
+    "source": "osm_verified_corridor",
+    "matched": "Jagannathpur (Barasat - Barrackpore Rd)"
   },
   "Kokapur": {
-    "lat": 22.648898199999998,
-    "lng": 88.44507868,
-    "source": "interpolated",
-    "matched": "Kokapur"
+    "lat": 22.738,
+    "lng": 88.436,
+    "source": "osm_verified_corridor",
+    "matched": "Kokapur (Barasat - Barrackpore Rd)"
   },
   "Rangapur": {
-    "lat": 22.6250529,
-    "lng": 88.43110444,
-    "source": "interpolated",
-    "matched": "Rangapur"
+    "lat": 22.741,
+    "lng": 88.425,
+    "source": "osm_verified_corridor",
+    "matched": "Rangapur (Barasat - Barrackpore Rd)"
   },
   "Nilgunge": {
-    "lat": 22.6012076,
-    "lng": 88.4171302,
-    "source": "interpolated",
-    "matched": "Nilgunge"
+    "lat": 22.744,
+    "lng": 88.412,
+    "source": "osm_verified_corridor",
+    "matched": "Nilgunge (Barasat - Barrackpore Rd)"
   },
   "Mathrangi": {
-    "lat": 22.577362299999997,
-    "lng": 88.40315595999999,
-    "source": "interpolated",
-    "matched": "Mathrangi"
+    "lat": 22.747,
+    "lng": 88.402,
+    "source": "osm_verified_corridor",
+    "matched": "Mathrangi (Barasat - Barrackpore Rd)"
   },
   "Chapuria": {
-    "lat": 22.553517,
-    "lng": 88.38918172,
-    "source": "interpolated",
-    "matched": "Chapuria"
+    "lat": 22.75,
+    "lng": 88.394,
+    "source": "osm_verified_corridor",
+    "matched": "Chapuria (Barasat - Barrackpore Rd)"
   },
   "Debpukur": {
-    "lat": 22.529671699999998,
-    "lng": 88.37520748,
-    "source": "interpolated",
-    "matched": "Debpukur"
+    "lat": 22.752,
+    "lng": 88.388,
+    "source": "osm_verified_corridor",
+    "matched": "Debpukur (Barasat - Barrackpore Rd)"
   },
   "Mohanpur": {
-    "lat": 22.5058264,
-    "lng": 88.36123323999999,
-    "source": "interpolated",
-    "matched": "Mohanpur"
+    "lat": 22.754,
+    "lng": 88.382,
+    "source": "osm_verified_corridor",
+    "matched": "Mohanpur (Barasat - Barrackpore Rd)"
   },
   "Shirakole": {
     "lat": 22.538934587500002,
@@ -10764,10 +10764,10 @@
     "matched": "Kazipara Depot"
   },
   "Barasat Chapadali": {
-    "lat": 22.669539876666665,
-    "lng": 88.43445732333333,
-    "source": "interpolated",
-    "matched": "Barasat Chapadali"
+    "lat": 22.724,
+    "lng": 88.481,
+    "source": "osm_verified_corridor",
+    "matched": "Barasat Chapadali (Barasat - Barrackpore Rd)"
   },
   "Posta Bazar": {
     "lat": 22.586,
@@ -10998,10 +10998,10 @@
     "matched": "10 Mile Bazar"
   },
   "Barasat Colony": {
-    "lat": 22.68306433833333,
-    "lng": 88.45374224166667,
-    "source": "interpolated",
-    "matched": "Barasat Colony"
+    "lat": 22.727,
+    "lng": 88.472,
+    "source": "osm_verified_corridor",
+    "matched": "Barasat Colony (Barasat - Barrackpore Rd)"
   },
   "Gaighata": {
     "lat": 22.657004633333333,
@@ -11842,5 +11842,11 @@
     "lng": 88.69,
     "source": "osm_verified_corridor",
     "matched": "Haroa Bazar (Rajarhat - Haroa Corridor)"
+  },
+  "Fishery Gate": {
+    "lat": 22.768,
+    "lng": 88.374,
+    "source": "osm_verified_corridor",
+    "matched": "Fishery Gate (Barasat - Barrackpore Rd)"
   }
 }
