@@ -147,9 +147,10 @@ function renderList(routes) {
     div.className = `route-item ${r.kind}` + (r.id === selectedId ? ' active' : '');
     div.dataset.id = r.id;
     const covPct = Math.round(r.coverage * 100);
+    const iconClass = r.kind === 'metro' ? 'fa-train-subway' : 'fa-bus';
     div.innerHTML = `
       <div class="route-header-row">
-        <div class="route-code">${esc(r.code)}</div>
+        <div class="route-code"><i class="fa-solid ${iconClass}"></i> ${esc(r.code)}</div>
         <span class="badge ${r.kind}">${r.kind}</span>
       </div>
       <div class="route-path">${esc(r.origin)} <i class="fa-solid fa-arrow-right arrow"></i> ${esc(r.destination)}</div>
