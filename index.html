@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kolkata Bus & Metro Router — Interactive Transit Map</title>
+
+  <!-- Google Fonts: Plus Jakarta Sans & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Sidebar -->
+    <aside id="sidebar">
+      <header class="app-header">
+        <div class="brand">
+          <div class="brand-icon"><i class="fa-solid fa-bus-simple"></i></div>
+          <div>
+            <h1>KOLKATA ROUTER</h1>
+            <p class="subtitle">Bus & Metro Transit Network</p>
+          </div>
+        </div>
+      </header>
+
+      <!-- Stats Bar -->
+      <div class="stats" id="stats">
+        <div class="stat"><div class="num">—</div><div class="lbl">Routes</div></div>
+        <div class="stat"><div class="num">—</div><div class="lbl">Bus Nos</div></div>
+        <div class="stat"><div class="num">—</div><div class="lbl">Stops</div></div>
+      </div>
+
+      <!-- Controls -->
+      <div class="controls">
+        <div class="search-wrapper">
+          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+          <input type="search" id="search" placeholder="Search route, origin, stop..." autocomplete="off">
+          <span class="shortcut-badge">/</span>
+          <button id="clearSearch" class="clear-btn hidden" aria-label="Clear search">&times;</button>
+        </div>
+
+        <!-- Filter Pills -->
+        <div class="kind-pills" id="kindPills">
+          <button class="pill active" data-kind="">All</button>
+          <button class="pill govt" data-kind="government"><span class="dot"></span>Govt</button>
+          <button class="pill pvt" data-kind="private"><span class="dot"></span>Private</button>
+          <button class="pill mini" data-kind="mini"><span class="dot"></span>Mini</button>
+          <button class="pill metro" data-kind="metro"><span class="dot"></span>Metro</button>
+        </div>
+
+        <div class="filters-row">
+          <div class="select-group">
+            <i class="fa-solid fa-layer-group select-icon"></i>
+            <select id="kindFilter">
+              <option value="">All Route Types</option>
+              <option value="government">Government (WBTC/CSTC)</option>
+              <option value="private">Private Bus</option>
+              <option value="mini">Mini Bus</option>
+              <option value="metro">Metro Line</option>
+            </select>
+          </div>
+
+          <div class="select-group">
+            <i class="fa-solid fa-location-dot select-icon"></i>
+            <select id="scopeFilter">
+              <option value="">All Scopes</option>
+              <option value="local">Local City</option>
+              <option value="regional">Regional / Intercity</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="toggles-row">
+          <label class="toggle-switch">
+            <input type="checkbox" id="showAllRoutes">
+            <span class="slider"></span>
+            <span class="label-text">Show All Network Lines</span>
+          </label>
+
+          <label class="toggle-switch">
+            <input type="checkbox" id="showStops" checked>
+            <span class="slider"></span>
+            <span class="label-text">Show Stop Markers</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Route List -->
+      <div id="routeList" class="route-list"></div>
+    </aside>
+
+    <!-- Main Map View -->
+    <main>
+      <div id="map"></div>
+
+      <!-- Floating Map Control Bar -->
+      <div class="map-controls">
+        <div class="basemap-switcher">
+          <button class="map-btn active" id="btnMapDark" title="Dark Canvas Mode">
+            <i class="fa-solid fa-moon"></i> <span>Dark</span>
+          </button>
+          <button class="map-btn" id="btnMapVoyager" title="Modern Light Mode">
+            <i class="fa-solid fa-sun"></i> <span>Light</span>
+          </button>
+          <button class="map-btn" id="btnMapSatellite" title="Satellite Imagery">
+            <i class="fa-solid fa-earth-asia"></i> <span>Satellite</span>
+          </button>
+        </div>
+
+        <button class="map-action-btn" id="btnLocateMe" title="Center My Location">
+          <i class="fa-solid fa-location-crosshairs"></i>
+        </button>
+
+        <button class="map-action-btn mobile-drawer-btn" id="btnToggleDrawer" title="Toggle Route List">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+
+      <!-- Route Detail Panel -->
+      <div id="routeDetail" class="route-detail glass-panel hidden">
+        <button id="closeDetail" class="close-btn" aria-label="Close detail panel">&times;</button>
+        <div class="detail-header">
+          <span id="detailBadge" class="badge"></span>
+          <h2 id="detailTitle"></h2>
+        </div>
+        <div id="detailMeta" class="detail-meta"></div>
+
+        <div class="stops-section">
+          <h3><i class="fa-solid fa-route"></i> Route Timeline & Stops</h3>
+          <ol id="detailStops" class="stop-timeline"></ol>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- Application Logic -->
+  <script src="app.js"></script>
+</body>
+</html>
