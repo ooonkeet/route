@@ -216,10 +216,10 @@
     "matched": "BK Paul"
   },
   "BNR Hospital": {
-    "lat": 22.5461743,
-    "lng": 88.3101495,
-    "source": "manual",
-    "matched": "BNR Hospital, Brace Bridge Road, Watganj (near Garden Reach)"
+    "lat": 22.546174,
+    "lng": 88.310149,
+    "source": "osm_verified",
+    "matched": "BNR Hospital, Garden Reach Road, BNR South Colony"
   },
   "BT College": {
     "lat": 22.646,

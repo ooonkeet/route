@@ -216,10 +216,10 @@
     "matched": "BK Paul"
   },
   "BNR Hospital": {
-    "lat": 22.5648931,
-    "lng": 88.3685142,
-    "source": "osm_fuzzy",
-    "matched": "NRS Hospital"
+    "lat": 22.546174,
+    "lng": 88.310149,
+    "source": "osm_verified",
+    "matched": "BNR Hospital, Garden Reach Road, BNR South Colony"
   },
   "BT College": {
     "lat": 22.646,
