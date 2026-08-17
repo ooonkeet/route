@@ -630,10 +630,10 @@
     "matched": "Bhowanipore"
   },
   "Bichali Ghat": {
-    "lat": 22.5502373,
-    "lng": 88.2853264,
-    "source": "nominatim",
-    "matched": "Bichali Ghat"
+    "lat": 22.544,
+    "lng": 88.281,
+    "source": "user_osm_verified",
+    "matched": "Bichali Ghat (Garden Reach / Metiabruz)"
   },
   "Bijoygarh": {
     "lat": 22.4872704,
@@ -1184,8 +1184,8 @@
   "Kidderpore": {
     "lat": 22.538,
     "lng": 88.332,
-    "source": "hub",
-    "matched": "Kidderpore"
+    "source": "user_osm_verified",
+    "matched": "Kidderpore (Garden Reach / Metiabruz)"
   },
   "Kolaipara": {
     "lat": 22.5641143,
@@ -1464,10 +1464,10 @@
     "matched": "Ramlal Bazar"
   },
   "Ramnagar": {
-    "lat": 22.543,
-    "lng": 88.309,
-    "source": "hub",
-    "matched": "Ramnagar"
+    "lat": 22.542,
+    "lng": 88.29,
+    "source": "user_osm_verified",
+    "matched": "Ramnagar (Garden Reach / Metiabruz)"
   },
   "Rampur": {
     "lat": 22.4212718,
@@ -2124,10 +2124,10 @@
     "matched": "Airport Gate 3"
   },
   "Babubazar": {
-    "lat": 22.545,
-    "lng": 88.312,
-    "source": "hub",
-    "matched": "Babubazar"
+    "lat": 22.541,
+    "lng": 88.318,
+    "source": "user_osm_verified",
+    "matched": "Babubazar (Garden Reach / Metiabruz)"
   },
   "Bagnan": {
     "lat": 22.462,
@@ -2280,10 +2280,10 @@
     "matched": "GD Island"
   },
   "Garden Reach": {
-    "lat": 22.548,
-    "lng": 88.31,
-    "source": "hub",
-    "matched": "Garden Reach"
+    "lat": 22.5432,
+    "lng": 88.2942,
+    "source": "user_osm_verified",
+    "matched": "Garden Reach (Garden Reach / Metiabruz)"
   },
   "Garia Station": {
     "lat": 22.464,
@@ -2634,16 +2634,16 @@
     "matched": "Kamal Talkies"
   },
   "Mudiali": {
-    "lat": 22.52199075,
-    "lng": 88.40632529999999,
-    "source": "interpolated",
-    "matched": "Mudiali"
+    "lat": 22.543,
+    "lng": 88.2825,
+    "source": "user_osm_verified",
+    "matched": "Mudiali (Garden Reach / Metiabruz)"
   },
   "Fatehpur": {
-    "lat": 22.513739675,
-    "lng": 88.40944727499999,
-    "source": "interpolated",
-    "matched": "Fatehpur"
+    "lat": 22.541,
+    "lng": 88.286,
+    "source": "user_osm_verified",
+    "matched": "Fatehpur (Garden Reach / Metiabruz)"
   },
   "Cancer Hospital": {
     "lat": 22.471999999999998,
@@ -10458,10 +10458,10 @@
     "matched": "Swasthya Bhawan"
   },
   "HMG College": {
-    "lat": 22.5178652125,
-    "lng": 88.40788628749999,
-    "source": "interpolated",
-    "matched": "HMG College"
+    "lat": 22.5425,
+    "lng": 88.284,
+    "source": "user_osm_verified",
+    "matched": "HMG College (Garden Reach / Metiabruz)"
   },
   "Santoshpur Station": {
     "lat": 22.56825365,
